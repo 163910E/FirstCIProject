@@ -1,3 +1,4 @@
+package rentalCalculatorApp;
 
 public class RentalCalculator {
 
@@ -13,13 +14,25 @@ public class RentalCalculator {
 		}
 		else {
 			if (member){
-
+				if (carModel.equals("Honda") && (duration > 3))
+					rentalFees = 65.0*duration*0.80;
+				else if (carModel.equals("Honda") && (duration <= 3))
+					rentalFees = 65.0*duration*0.9;
+				else if (carModel.equals("Toyota") && (duration > 3))
+					rentalFees = 80.0*duration*0.80;
+				else
+					rentalFees = 80.0*duration*0.90;
 				//handle member transactions
 				// ...
 
 			}
 			else { //non-member
 				
+				if(carModel.equals("Honda")){
+					rentalFees = 65.0*duration;
+				}else{
+					rentalFees = 80.0*duration;
+				}
 				//handle non-member transactions
 				//...
 				
